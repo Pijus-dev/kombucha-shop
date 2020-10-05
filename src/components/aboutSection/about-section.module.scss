@@ -1,0 +1,82 @@
+.titleSection {
+    height: 300px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    .title {
+      position: relative;
+      text-align: center;
+  
+      h2 {
+        font-weight: 400;
+        font-size: 1.6rem;
+        letter-spacing: 1.4px;
+        line-height: 1.4;
+      }
+      p {
+        font-size: 0.9rem;
+        font-weight: lighter;
+      }
+    }
+    .titleInformation {
+      font-weight: 0.7rem;
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  
+  .story {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+  
+    .aboutImage {
+      background-image: url("https://images.unsplash.com/photo-1547925150-eb2955311dae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
+      height: 540px;
+      width: 540px;
+      background-size: cover;
+      background-position: 0% 70%;
+  
+      &:hover {
+        transform: scale(1.1);
+        transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+      }
+    }
+  
+    .storyInformation {
+      padding-left: 35px;
+      height: 540px;
+      width: 650px;
+      display: flex;
+      align-items: center;
+  
+      h2 {
+        font-size: 1.2rem;
+      }
+  
+      p {
+        letter-spacing: 1.4px;
+        line-height: 1.4;
+        font-size: 1rem;
+        color: #333;
+      }
+  
+      button {
+        background-color: black;
+        color: white;
+        padding: 12px 30px;
+        border: none;
+        font-weight: lighter;
+        margin-top: 10px;
+        font-size: 0.8rem;
+        letter-spacing: 1.4px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: rgb(170, 155, 155);
+        }
+      }
+    }
+  }
