@@ -9,6 +9,20 @@ import {
   useTransform,
 } from "framer-motion";
 
+const variants = {
+  hover: {
+    y: [0, -15],
+    x: 0,
+    transition: {
+      y: {
+        yoyo: Infinity,
+        duration: 0.5,
+        ease: "easeOut",
+      },
+    },
+  },
+};
+
 const ScrollArrow = () => {
   const [isComplete, setIsComplete] = useState(false);
   const { scrollYProgress } = useViewportScroll();
@@ -18,10 +32,12 @@ const ScrollArrow = () => {
   useEffect(() => yRange.onChange((v) => setIsComplete(v >= 1)), [yRange]);
 
   return (
-    <svg
+    <motion.svg
       className="progress-icon"
       viewBox="0 0 60 60"
       onClick={() => window.scroll({ top: 0, behavior: "smooth" })}
+      whileHover="hover"
+      variants={variants}
     >
       <motion.path
         fill="none"
@@ -46,7 +62,7 @@ const ScrollArrow = () => {
         strokeDasharray="0 1"
         animate={{ pathLength: isComplete ? 1 : 0 }}
       />
-    </svg>
+    </motion.svg>
   );
 };
 export default ScrollArrow;

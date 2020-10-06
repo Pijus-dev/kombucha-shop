@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./about-section.module.scss";
 
 const AboutSection = () => (
-  <div>
+  <div className={styles.aboutSection}>
     <div className={styles.titleSection}>
       <div className={styles.title} data-aos="fade-up" data-aos-duration="1500">
         <h2>WELCOME TO KOMBUCHA</h2>
@@ -31,7 +31,7 @@ const AboutSection = () => (
         data-aos-duration="1500"
       >
         <div>
-          <h2>OUR STORY</h2>
+          <h3>OUR STORY</h3>
           <p>
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus
             explicabo autem voluptatum et, impedit dolor assumenda laboriosam,
@@ -41,6 +41,13 @@ const AboutSection = () => (
           <button>READ MORE</button>
         </div>
       </div>
+    </div>
+    <div className={styles.process} data-aos="fade-up" data-aos-duration="1500">
+      <h2>OUR PROCESS</h2>
+      <div
+      className={styles.line}
+      ></div>
+      <div className={styles.processImage}></div>
     </div>
   </div>
 );

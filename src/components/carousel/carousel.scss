@@ -8,8 +8,12 @@
   .title {
     width: 30%;
     text-align: center;
+    padding: 0 20px 20px 20px;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.5);
+    
     h1 {
-      font-size: 2rem;
+      font-size: 1.75rem;
       letter-spacing: 1.7px;
       color: white;
       line-height: 1.3;
@@ -27,9 +31,29 @@
       font-size: 1rem;
       padding: 10px 25px;
       border: none;
-      background-color: #01a597;
-      color: rgb(226, 176, 83);
+      color: white;
+      background-color: #488169;
       cursor: pointer;
+    }
+  }
+}
+
+.indicators {
+  justify-content: flex-end !important;
+  margin-top: -5px !important;
+  z-index: 100 !important;
+  position: absolute !important;
+  right: 2.5%;
+  top: 94%;
+
+  li {
+    margin-right: 10px !important;
+
+    .each-slideshow-indicator {
+      &::before {
+        background: #eee !important;
+        padding: 2.35px;
+      }
     }
   }
 }
