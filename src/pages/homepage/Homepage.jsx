@@ -4,9 +4,9 @@ import Carousel from "../../components/carousel/Carousel";
 import AboutSection from "../../components/aboutSection/AboutSection";
 import ScrollArrow from "../../components/scrollArrow/ScrollArrow";
 import Cards from "../../components/Cards/Cards";
+import SocialSection from "../../components/socialSection/SocialSection";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { storage } from "../../firebase/firebase";
 import styles from "./homepage.module.scss";
 
 const HomePage = () => {
@@ -20,6 +20,7 @@ const HomePage = () => {
       <AboutSection />
       <ScrollArrow />
       <Cards />
+      <SocialSection />
     </div>
   );
 };

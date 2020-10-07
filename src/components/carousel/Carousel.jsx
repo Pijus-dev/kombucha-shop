@@ -12,7 +12,7 @@ const slides = [
   {
     image: 1,
     title:
-      "CREATED IN THE ON THE BALTIC COAST. CAPTAIN KOMUBCHA WITH NEW FLAVOURS IS NOW AVAILABLE SHOP ONLINE WITH FREE DELIVERY IN LITHUANIA",
+      "CREATED IN THE ON THE BALTIC COAST. CAPTAIN KOMUBCHA WITH NEW FLAVOURS",
     button: "SHOP NOW",
   },
   {
@@ -46,7 +46,7 @@ const Carousel = () => {
   return (
     <div>
       <div className="slide-container">
-        <Fade arrows={false} indicators={true}>
+        <Fade arrows={false} indicators={true} autoplay={false}>
           {slides.map(({ image, title, button, paragraph }) => (
             <div className="each-fade" key={image}>
               <CarouselNavbar />
@@ -57,7 +57,7 @@ const Carousel = () => {
                   animate={{ opacity: 1, y: -50 }}
                   transition={{ delay: 1, duration: 1.5 }}
                 >
-                  <h1>{title}</h1>
+                  <h1>{title.toLowerCase()}</h1>
                   <p>{paragraph && paragraph}</p>
                   <motion.button whileHover="hover" variants={buttonMotion}>
                     {button}

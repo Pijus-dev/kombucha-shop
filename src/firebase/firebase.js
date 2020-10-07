@@ -1,19 +1,18 @@
 import firebase from "firebase/app";
-import "firebase/storage";
-import 'firebase/firestore';
+import "firebase/firestore";
 
+// Your web app's Firebase configuration
 var firebaseConfig = {
-  apiKey: "AIzaSyCnW9YtNQR4JL6H9QHLNohzRFi4untDDEY",
-  authDomain: "kombucha-c719e.firebaseapp.com",
-  databaseURL: "https://kombucha-c719e.firebaseio.com",
-  projectId: "kombucha-c719e",
-  storageBucket: "kombucha-c719e.appspot.com",
-  messagingSenderId: "645728640643",
-  appId: "1:645728640643:web:ec366d6f5406ffec2105b6",
+  apiKey: "AIzaSyBTaxkv-nFyzUuZuQZuQ0stGiW4J_BcIm8",
+  authDomain: "kombucha-shop.firebaseapp.com",
+  databaseURL: "https://kombucha-shop.firebaseio.com",
+  projectId: "kombucha-shop",
+  storageBucket: "kombucha-shop.appspot.com",
+  messagingSenderId: "897632217885",
+  appId: "1:897632217885:web:136e303e762091b2054ff4",
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
-export const storage = firebase.storage();
 
 export const getDrinks = async () => {
   const data = await firebase.firestore().collection("drinks").get();
