@@ -1,6 +1,11 @@
 import React from "react";
 
 import { motion } from "framer-motion";
+import { ReactComponent as Visa } from "../../img/visa.svg";
+import { ReactComponent as Master } from "../../img/master.svg";
+import { ReactComponent as Paypal } from "../../img/paypal.svg";
+import { AiOutlineInstagram, FaFacebook } from "react-icons/all";
+import CustomButton from "../customButton/CustomButton";
 
 import styles from "./footer.module.scss";
 
@@ -46,7 +51,28 @@ const Footer = () => (
         <div className={styles.subscribe}>
           <input type="text" />
           <label className={styles.formLabel}>Your email address</label>
-          <button>SIGN ME UP</button>
+          <CustomButton>SIGN ME UP</CustomButton>
+        </div>
+      </div>
+    </div>
+    <div className={styles.socialContent}>
+      <div className={styles.socialIcons}>
+        <div>
+          <p>&copy; Captain Kombuchia 2020</p>
+        </div>
+        <div className={styles.creditCards}>
+          <Visa />
+          <Master style={{ marginLeft: "10px", marginRight: "10px" }} />
+          <Paypal />
+        </div>
+        <div className={styles.terms}>
+          <p>Privacy Policy</p>
+          <p>Terms of services</p>
+          <p>FAQ</p>
+        </div>
+        <div className={styles.icons}>
+          <AiOutlineInstagram size={26} style={{ marginRight: "10px" }} />
+          <FaFacebook size={26} />
         </div>
       </div>
     </div>

@@ -1,6 +1,7 @@
 import React from "react";
 
 import { AiOutlineInstagram } from "react-icons/ai";
+import CustomButton from "../customButton/CustomButton";
 
 import styles from "./social.module.scss";
 
@@ -54,7 +55,7 @@ const SocialSection = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button>FOLLOW US</button>
+          <CustomButton>FOLLOW US</CustomButton>
         </a>
       </div>
     </div>

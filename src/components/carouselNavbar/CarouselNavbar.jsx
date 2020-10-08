@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from "react";
 
+import { connect } from "react-redux";
 import { motion } from "framer-motion";
 import MobileNavigation from "../mobileNavigation/MobileNavigation";
 import CartIcon from "../cartIcon/CartIcon";
-import styles from "./carousel-navbar.module.scss";
+import Cart from "../cart/Cart";
 import { Link } from "react-router-dom";
+import { selectCartHidden } from "../../redux/cart/cartSelectors";
+import { createStructuredSelector } from "reselect";
+
+import styles from "./carousel-navbar.module.scss";
 
 const textMotion = {
   rest: {
@@ -21,7 +26,7 @@ const textMotion = {
   },
 };
 
-const CarouselNavbar = () => {
+const CarouselNavbar = ({ hidden }) => {
   const [showMenu, setShowMenu] = useState(false);
   const [className, setClassName] = useState("");
 
@@ -65,6 +70,7 @@ const CarouselNavbar = () => {
                 <Link>Our Story</Link>
               </motion.div>
               <CartIcon />
+              {hidden ? null : <Cart />}
               <div
                 className={`${styles.toggler} ${showMenu ? styles.active : ""}`}
                 onClick={() => setShowMenu(!showMenu)}
@@ -81,4 +87,9 @@ const CarouselNavbar = () => {
     </div>
   );
 };
-export default CarouselNavbar;
+
+const mapStateToProps = createStructuredSelector({
+  hidden: selectCartHidden,
+});
+
+export default connect(mapStateToProps)(CarouselNavbar);

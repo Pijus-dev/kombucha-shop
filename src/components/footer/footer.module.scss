@@ -1,11 +1,20 @@
 @mixin shrinkLabel {
-  top: -14px;
+  top: -6px;
   font-size: 12px;
   color: black;
 }
 
 footer {
-  height: 330px;
+  // height: 330px;
+
+  p {
+    font-family: "Poppins", sans-serif;
+    color: #858585;
+    letter-spacing: 1.3px;
+    font-size: 0.94rem;
+    font-weight: lighter;
+    margin: 0;
+  }
 
   .footerContent {
     width: 95%;
@@ -53,14 +62,6 @@ footer {
         font-weight: 600;
         margin: 0;
       }
-
-      p {
-        font-family: "Poppins", sans-serif;
-        color: #858585;
-        letter-spacing: 1.3px;
-        font-size: 0.94rem;
-        font-weight: lighter;
-      }
       .subscribe {
         position: relative;
         width: 74%;
@@ -94,8 +95,8 @@ footer {
           font-weight: lighter;
           position: absolute;
           pointer-events: none;
-          left: 5px;
-          top: 10px;
+          left: 15px;
+          top: 22px;
           transition: 300ms ease all;
           letter-spacing: 0.1rem;
 
@@ -103,19 +104,34 @@ footer {
             @include shrinkLabel();
           }
         }
-        button {
-          color: #fff;
-          border-color: #488169;
-          background-color: #488169;
-          border-width: 2px;
-          padding: 15px 30px;
-          letter-spacing: 1.3px;
-          font-weight: bold;
-          font-size: 20px;
-          line-height: 20px;
-          border-radius: 6px;
-          font-family: "Poppins", sans-serif;
-          cursor: pointer;
+      }
+    }
+  }
+  .socialContent {
+    height: 80px;
+    border-top: 1px solid black;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    .socialIcons {
+      width: 90%;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+
+      .creditCards {
+      }
+      .terms {
+        display: flex;
+        justify-content: space-between;
+      }
+      .icons {
+        display: flex;
+        justify-content: flex-end;
+        &:first-child {
+          margin-right: 50px;
         }
       }
     }
