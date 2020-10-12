@@ -13,9 +13,11 @@ import CartItem from "../cartItem/cartItem";
 
 import styles from "./cart.module.scss";
 
-const Cart = ({ cartItems, dispatch }) => {
-  const data = JSON.parse(localStorage.getItem("cartItems"));
-  console.log(data);
+const Cart = ({ cartItems, dispatch, history }) => {
+  const redirect = () => {
+    history.push("/checkout");
+    dispatch(toggleCartHidden());
+  };
   return (
     <div className={styles.cartDropdown}>
       <div className={styles.cartItems}>
@@ -27,7 +29,9 @@ const Cart = ({ cartItems, dispatch }) => {
           <h2>Your Cart Is Empty</h2>
         )}
       </div>
-      {cartItems.length > 0 && <CustomButton>GO TO CHECKOUT</CustomButton>}
+      {cartItems.length > 0 && (
+        <CustomButton onClick={redirect}>GO TO CHECKOUT</CustomButton>
+      )}
     </div>
   );
 };

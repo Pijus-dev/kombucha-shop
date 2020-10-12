@@ -1,0 +1,70 @@
+.links {
+    display: flex;
+    align-items: center;
+    
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.123rem;
+      margin-right: 12px;
+      letter-spacing: 1.3px;
+      position: relative;
+
+      @media screen and(max-width: 883px) {
+        display: none;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: rgb(211, 161, 68);
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover::before {
+        visibility: visible;
+        transform: scaleX(1);
+      }
+    }
+    .toggler {
+      display: none;
+      height: 44px;
+      width: 44px;
+      padding: 10px;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: stretch;
+      cursor: pointer;
+      z-index: 100;
+
+      @media screen and(max-width: 883px) {
+        display: flex;
+      }
+
+      .togglerLine {
+        display: block;
+        height: 1.3px;
+        background: #a59e9e;
+      }
+    }
+
+    .active {
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      float: right;
+      .togglerLine {
+        display: none;
+      }
+      &:after {
+        content: "✕";
+        color: #a59e9e;
+        font-size: 1.5rem;
+      }
+    }
+  }

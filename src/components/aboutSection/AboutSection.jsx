@@ -1,5 +1,6 @@
 import React from "react";
 
+import { Link } from "react-router-dom";
 import styles from "./about-section.module.scss";
 
 const AboutSection = () => (
@@ -38,15 +39,15 @@ const AboutSection = () => (
             culpa alias optio suscipit nam, odit perferendis earum unde quam
             dolorum corrupti! Quos asperiores blanditiis quas. Accusantium...
           </p>
-          <button>READ MORE</button>
+          <Link to="/about">
+            <button>READ MORE</button>
+          </Link>
         </div>
       </div>
     </div>
     <div className={styles.process} data-aos="fade-up" data-aos-duration="1500">
       <h2>OUR PROCESS</h2>
-      <div
-      className={styles.line}
-      ></div>
+      <div className={styles.line}></div>
       <div className={styles.processImage}></div>
     </div>
   </div>

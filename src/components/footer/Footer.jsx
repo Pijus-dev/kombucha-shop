@@ -5,15 +5,16 @@ import { ReactComponent as Visa } from "../../img/visa.svg";
 import { ReactComponent as Master } from "../../img/master.svg";
 import { ReactComponent as Paypal } from "../../img/paypal.svg";
 import { AiOutlineInstagram, FaFacebook } from "react-icons/all";
+import { Link } from "react-router-dom";
 import CustomButton from "../customButton/CustomButton";
 
 import styles from "./footer.module.scss";
 
 const aboutTLi = [
-  "About Us",
-  "Where to buy?",
-  "Become reseller",
-  "Latest News",
+  { name: "About Us", link: "/about" },
+  { name: "Where to buy?", link: "/locations" },
+  { name: "Become reseller", link: "/resell" },
+  { name: "Latest News", link: "/news" },
 ];
 
 const Footer = () => (
@@ -21,13 +22,13 @@ const Footer = () => (
     <div className={styles.footerContent}>
       <div>
         <ul className={styles.about}>
-          {aboutTLi.map((item, idx) => (
+          {aboutTLi.map(({ name, link }) => (
             <motion.li
-              whileHover={{ scale: 1.2, originX: 0, color: "#488169" }}
+              whileHover={{ scale: 1.2, originX: 0 }}
               transition={{ type: "spring", stiffness: 300 }}
-              key={idx}
+              key={name}
             >
-              {item}
+              <Link to={`${link}`}>{name}</Link>
             </motion.li>
           ))}
         </ul>
@@ -71,8 +72,20 @@ const Footer = () => (
           <p>FAQ</p>
         </div>
         <div className={styles.icons}>
-          <AiOutlineInstagram size={26} style={{ marginRight: "10px" }} />
-          <FaFacebook size={26} />
+          <a
+            href="https://www.instagram.com/kkombucia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <AiOutlineInstagram size={26} style={{ marginRight: "10px" }} />
+          </a>
+          <a
+            href="https://www.instagram.com/kkombucia/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaFacebook size={26} />
+          </a>
         </div>
       </div>
     </div>

@@ -1,7 +1,9 @@
+@import "../../scss/colors";
+
 .customButton {
   color: #fff;
-  border-color: #488169;
-  background-color: #488169;
+  border-color: $btn-primary;
+  background-color: $btn-primary;
   border-width: 2px;
   padding: 15px 30px;
   letter-spacing: 1.3px;
@@ -11,4 +13,8 @@
   border-radius: 6px;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  
+  &:hover {
+    background-color: $btn-primary--hover;
+  }
 }

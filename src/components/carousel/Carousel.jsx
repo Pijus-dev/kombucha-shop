@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import CarouselNavbar from "../carouselNavbar/CarouselNavbar";
 
 import { Fade } from "react-slideshow-image";
+import { withRouter } from "react-router-dom";
 import "react-slideshow-image/dist/styles.css";
 
 import "./carousel.scss";
@@ -14,18 +15,21 @@ const slides = [
     title:
       "CREATED IN THE ON THE BALTIC COAST. CAPTAIN KOMUBCHA WITH NEW FLAVOURS",
     button: "SHOP NOW",
+    link: "/shop",
   },
   {
     image: 2,
     title:
       "NOW AVAILABLE TO ORDER FROM OUR WEBSITE - SHOP NOW WITH FREE DELIVERY IN GUERNSEY",
     button: "SHOP NOW",
+    link: "/shop",
   },
   {
     image: 3,
     paragraph:
       "Kapitono Kombucha is delicious served chilled over ice with a twist of citrus zest. As KTea is raw and alive, it needs to be stored in the refrigerator to stop the fermentation",
     button: "SHOP NOW",
+    link: "/shop",
     title: "OUR KOMBUCHA",
   },
 ];
@@ -42,12 +46,12 @@ const buttonMotion = {
   },
 };
 
-const Carousel = () => {
+const Carousel = ({ history }) => {
   return (
     <div>
       <div className="slide-container">
         <Fade arrows={false} indicators={true} autoplay={false}>
-          {slides.map(({ image, title, button, paragraph }) => (
+          {slides.map(({ image, title, button, paragraph, link }) => (
             <div className="each-fade" key={image}>
               <CarouselNavbar />
               <div className={`slideImage image-${image}`}>
@@ -59,7 +63,11 @@ const Carousel = () => {
                 >
                   <h1>{title.toLowerCase()}</h1>
                   <p>{paragraph && paragraph}</p>
-                  <motion.button whileHover="hover" variants={buttonMotion}>
+                  <motion.button
+                    whileHover="hover"
+                    variants={buttonMotion}
+                    onClick={() => history.push(`${link}`)}
+                  >
                     {button}
                   </motion.button>
                 </motion.div>
@@ -71,4 +79,4 @@ const Carousel = () => {
     </div>
   );
 };
-export default Carousel;
+export default withRouter(Carousel);

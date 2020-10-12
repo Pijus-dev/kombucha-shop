@@ -15,7 +15,11 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 export const getDrinks = async () => {
-  const data = await firebase.firestore().collection("drinks").get();
+  const data = await firebase
+    .firestore()
+    .collection("drinks")
+    .where("drink", "==", true)
+    .get();
 
   const array = [];
 
@@ -25,6 +29,29 @@ export const getDrinks = async () => {
       name: item.data().name,
       price: item.data().price,
       imgUrl: item.data().imgUrl,
+      description: item.data().description
+    };
+    array.push(obj);
+  });
+  return array;
+};
+
+export const getShopDrinks = async () => {
+  const data = await firebase
+    .firestore()
+    .collection("drinks")
+    .where("shop", "==", true)
+    .get();
+
+  const array = [];
+
+  data.forEach((item) => {
+    const obj = {
+      id: item.id,
+      name: item.data().name,
+      price: item.data().price,
+      imgUrl: item.data().imgUrl,
+      description: item.data().description
     };
     array.push(obj);
   });

@@ -1,30 +1,10 @@
 import React, { useEffect, useState } from "react";
 
-import { connect } from "react-redux";
 import { motion } from "framer-motion";
 import MobileNavigation from "../mobileNavigation/MobileNavigation";
-import CartIcon from "../cartIcon/CartIcon";
-import Cart from "../cart/Cart";
-import { Link } from "react-router-dom";
-import { selectCartHidden } from "../../redux/cart/cartSelectors";
-import { createStructuredSelector } from "reselect";
+import NavLinks from "../navLinks/NavLinks";
 
 import styles from "./carousel-navbar.module.scss";
-
-const textMotion = {
-  rest: {
-    y: 0,
-    transition: {
-      duration: 0.2,
-    },
-  },
-  hover: {
-    y: -10,
-    transition: {
-      duration: 0.2,
-    },
-  },
-};
 
 const CarouselNavbar = ({ hidden }) => {
   const [showMenu, setShowMenu] = useState(false);
@@ -59,27 +39,7 @@ const CarouselNavbar = ({ hidden }) => {
             <div className={styles.logo}>
               <img src={require("../../img/logo.jpg")} alt="" />
             </div>
-            <div className={styles.links}>
-              <motion.div variants={textMotion} whileHover="hover">
-                <Link>Our Kombucha</Link>
-              </motion.div>
-              <motion.div variants={textMotion} whileHover="hover">
-                <Link>Shop Now</Link>
-              </motion.div>
-              <motion.div variants={textMotion} whileHover="hover">
-                <Link>Our Story</Link>
-              </motion.div>
-              <CartIcon />
-              {hidden ? null : <Cart />}
-              <div
-                className={`${styles.toggler} ${showMenu ? styles.active : ""}`}
-                onClick={() => setShowMenu(!showMenu)}
-              >
-                <span className={styles.togglerLine}></span>
-                <span className={styles.togglerLine}></span>
-                <span className={styles.togglerLine}></span>
-              </div>
-            </div>
+            <NavLinks setShowMenu={setShowMenu} showMenu={showMenu} />
           </nav>
         </div>
         {<MobileNavigation open={showMenu} />}
@@ -88,8 +48,4 @@ const CarouselNavbar = ({ hidden }) => {
   );
 };
 
-const mapStateToProps = createStructuredSelector({
-  hidden: selectCartHidden,
-});
-
-export default connect(mapStateToProps)(CarouselNavbar);
+export default CarouselNavbar;
