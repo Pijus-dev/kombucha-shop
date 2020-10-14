@@ -16,12 +16,14 @@ const LocationsPage = React.lazy(() =>
 const SingleProductPage = React.lazy(() =>
   import("../src/pages/singleProduct/SingleProduct")
 );
+const ResellPage = React.lazy(() => import("../src/pages/resell/Resell"));
 
 const ShopPageWithNavbar = WithNavbar(ShopPage);
 const CheckoutPageWithNavbar = WithNavbar(CheckoutPage);
 const AboutPageWithNavbar = WithNavbar(AboutPage);
 const LocationPageWithNavbar = WithNavbar(LocationsPage);
 const SingleProductWithNavbar = WithNavbar(SingleProductPage);
+const ResellPageWithNavbar = WithNavbar(ResellPage);
 
 function App() {
   return (
@@ -38,6 +40,7 @@ function App() {
             path="/product/:id"
             component={SingleProductWithNavbar}
           />
+          <Route path="/become-reseller" component={ResellPageWithNavbar} />
         </Suspense>
       </Switch>
       <Footer />

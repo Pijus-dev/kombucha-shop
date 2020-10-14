@@ -37,6 +37,9 @@ const NavLinks = ({ hidden, setShowMenu, showMenu }) => {
       <motion.div variants={textMotion} whileHover="hover">
         <Link to="/about">Our Story</Link>
       </motion.div>
+      <motion.div variants={textMotion} whileHover="hover">
+        <Link to="/locations">Where to buy</Link>
+      </motion.div>
       <CartIcon />
       {hidden ? null : <Cart />}
       <div

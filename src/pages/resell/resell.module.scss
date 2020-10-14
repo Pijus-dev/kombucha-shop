@@ -1,0 +1,89 @@
+$btn-color: #b47874;
+
+.container {
+  width: 90%;
+  margin: 30px auto 0 auto;
+  display: flex;
+  padding-bottom: 20px;
+
+  .image {
+    width: 50%;
+    height: 750px;
+    background-image: url("https://scontent.fvno2-1.fna.fbcdn.net/v/t1.0-9/75481650_460332301262614_2426880818317099008_o.jpg?_nc_cat=106&_nc_sid=9267fe&_nc_ohc=RzX6-4YjbUcAX81iTQm&_nc_ht=scontent.fvno2-1.fna&oh=49ead3faac53454fb15028e2fedf58bb&oe=5FAAF927");
+    background-size: cover;
+    background-position: center;
+  }
+  .content {
+    width: 50%;
+    padding-top: 15px;
+
+    h2 {
+      margin: 0;
+      color: #06396a;
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 1.5px;
+      font-family: "Poppins", sans-serif;
+      text-align: center;
+    }
+
+    .submition {
+      width: 65%;
+      margin: 30px auto 0 auto;
+      padding: 5px 20px 12px 20px;
+      box-shadow: 0px 2px 2px 3px #eee;
+      border-radius: 8px;
+      background-color: #e0d090;
+      position: relative;
+      height: 365px;
+
+      .group {
+        width: 90%;
+        margin-top: 30px;
+      }
+      input {
+        border-bottom: 1.7px solid rgb(231, 214, 214);
+      }
+      .error {
+        color: red;
+        font-family: "Poppins", sans-serif;
+        letter-spacing: 1.4px;
+        font-size: 0.7rem;
+        margin-left: 5px;
+      }
+      label {
+        color: #eee;
+        font-weight: 400;
+      }
+      textarea {
+        margin-top: 20px;
+        height: 60px;
+        border-radius: 6px;
+        border: 1.7px solid rgb(231, 214, 214);
+        width: 100%;
+        color: black;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.78rem;
+        font-weight: lighter;
+        padding: 10px;
+        letter-spacing: 0.1rem;
+        background-color: rgb(245, 238, 238);
+      }
+      button {
+        font-size: 14px;
+        padding: 6px 15px;
+        font-weight: 400;
+        margin-top: 10px;
+        background-color: $btn-color;
+        border-color: $btn-color;
+        position: absolute;
+        bottom: 10px;
+        right: 35px;
+
+        &:hover {
+          background-color: darken($btn-color, 7%);
+        }
+      }
+    }
+  }
+}
