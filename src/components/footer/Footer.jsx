@@ -17,6 +17,13 @@ const aboutTLi = [
   { name: "Latest News", link: "/news" },
 ];
 
+const products = [
+  { name: "Kombucha Classic 33cl", id: "0n7JihVoS8FJcJPshNuY" },
+  { name: "Kombucha Blueberry 33cl", id: "yiVj8dW8crfMjTp4L6GY" },
+  { name: "Kombucha Pineapple with Ginger 33cl", id: "PNPPpUk1Up1053ipUS9r" },
+  { name: "Captain Mix 35x33cl", id: "wkFakNkUwQREV1Fo4W9a" },
+];
+
 const Footer = () => (
   <footer>
     <div className={styles.footerContent}>
@@ -36,10 +43,11 @@ const Footer = () => (
       <div>
         <ul className={styles.products}>
           <li>Products:</li>
-          <li>Kombucha Classic 333ml</li>
-          <li>Kombucha Blueberry 333ml</li>
-          <li>Kombucha Raspberry 333ml</li>
-          <li>Kombucha Pineapple with Ginger 333ml</li>
+          {products.map(({ name, id }) => (
+            <li key={id}>
+              <Link to={`/product/${id}`}>{name}</Link>
+            </li>
+          ))}
         </ul>
       </div>
       <div className={styles.map}>

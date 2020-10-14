@@ -1,21 +1,23 @@
 import React from "react";
 
 import CustomButton from "../customButton/CustomButton";
-import { addItem } from "../../redux/cart/cartActions";
-import { connect } from "react-redux";
+
+import { Link } from "react-router-dom";
 
 import styles from "./product.module.scss";
 
-const Product = ({ item, addItem }) => {
-  const { name, price, imgUrl, description } = item;
+const Product = ({ item }) => {
+  const { name, price, imgUrl, description, id } = item;
   return (
     <div className={styles.product}>
-      <div
-        className={styles.productImage}
-        style={{ backgroundImage: `url(${imgUrl})` }}
-      >
-        <CustomButton onClick={() => addItem(item)}>ADD TO CART</CustomButton>
-      </div>
+      <Link to={`/product/${id}`}>
+        <div
+          className={styles.productImage}
+          style={{ backgroundImage: `url(${imgUrl[0]})` }}
+        >
+          <CustomButton>SEE MORE</CustomButton>
+        </div>
+      </Link>
       <div className={styles.productInfo}>
         <h3>{name}</h3>
         <p>
@@ -25,8 +27,5 @@ const Product = ({ item, addItem }) => {
     </div>
   );
 };
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
-});
 
-export default connect(null, mapDispatchToProps)(Product);
+export default Product;

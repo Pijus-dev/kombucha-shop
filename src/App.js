@@ -13,11 +13,15 @@ const AboutPage = React.lazy(() => import("../src/pages/about/AboutPage"));
 const LocationsPage = React.lazy(() =>
   import("../src/pages/locations/Locations")
 );
+const SingleProductPage = React.lazy(() =>
+  import("../src/pages/singleProduct/SingleProduct")
+);
 
 const ShopPageWithNavbar = WithNavbar(ShopPage);
 const CheckoutPageWithNavbar = WithNavbar(CheckoutPage);
 const AboutPageWithNavbar = WithNavbar(AboutPage);
 const LocationPageWithNavbar = WithNavbar(LocationsPage);
+const SingleProductWithNavbar = WithNavbar(SingleProductPage);
 
 function App() {
   return (
@@ -29,6 +33,11 @@ function App() {
           <Route path="/checkout" component={CheckoutPageWithNavbar} />
           <Route path="/about" component={AboutPageWithNavbar} />
           <Route path="/locations" component={LocationPageWithNavbar} />
+          <Route
+            exact
+            path="/product/:id"
+            component={SingleProductWithNavbar}
+          />
         </Suspense>
       </Switch>
       <Footer />

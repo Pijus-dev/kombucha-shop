@@ -57,6 +57,10 @@ footer {
         &:first-child {
           font-weight: 600;
         }
+        a {
+          color: black;
+          cursor: pointer;
+        }
       }
     }
     .map {

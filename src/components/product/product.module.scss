@@ -10,7 +10,7 @@ $shadow-hover: darken($shadow-color, 4%);
     transform: scale(1.05);
     box-shadow: 0px 0px 4px 6px $shadow-hover;
   }
-
+  
   .productImage {
     border-radius: 10px 10px 0px 0px;
     height: 350px;
@@ -31,6 +31,7 @@ $shadow-hover: darken($shadow-color, 4%);
       margin-bottom: 15px;
     }
   }
+  
 
   .productInfo {
     padding-top: 10px;

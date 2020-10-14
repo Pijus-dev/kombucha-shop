@@ -4,6 +4,10 @@ body {
   font-family: "Comic Neue", cursive;
 }
 
+a {
+  text-decoration: none;
+}
+
 body::-webkit-scrollbar {
   width: 0.25rem;
 }

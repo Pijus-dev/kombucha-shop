@@ -13,6 +13,7 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+export const firestore = firebase.firestore();
 
 export const getDrinks = async () => {
   const data = await firebase

@@ -1,24 +1,22 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cartActions";
+import { Link } from "react-router-dom";
 
 import styles from "./drink.module.scss";
 
 const Drink = ({ item, addItemToCart }) => {
-  const { name, price, imgUrl, description } = item;
+  const { name, price, imgUrl, description, id } = item;
   return (
     <div className={styles.drink}>
-      <div
-        className={styles.drinkImage}
-        style={{ backgroundImage: `url(${imgUrl})` }}
-      >
-        <button
-          className={styles.addToCart}
-          onClick={() => addItemToCart(item)}
+      <Link to={`/product/${id}`}>
+        <div
+          className={styles.drinkImage}
+          style={{ backgroundImage: `url(${imgUrl[0]})` }}
         >
-          Add To Cart
-        </button>
-      </div>
+          <button className={styles.addToCart}>CHECK MORE</button>
+        </div>
+      </Link>
 
       <div className={styles.drinkInfo}>
         <h3>{name}</h3>
