@@ -1,0 +1,39 @@
+@import "../../scss/colors";
+.about {
+  width: 100%;
+  padding-bottom: 20px;
+  text-align: center;
+
+  h2 {
+    font-size: 1.4rem;
+    letter-spacing: 1.4px;
+    text-align: center;
+  }
+  .aboutText {
+    width: 50%;
+    margin: 0 auto;
+
+    p {
+      letter-spacing: 1.3px;
+      line-height: 1.3;
+      font-size: 0.9rem;
+      color: #858585;
+    }
+  }
+  .aboutImage {
+    background-image: url("../../img/captain.jpg");
+    width: 45%;
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    margin: 20px auto;
+  }
+  button {
+    background-color: $btn-secondary;
+    border-color: $btn-secondary;
+
+    &:hover {
+      background-color: $btn-secondary--hover;
+    }
+  }
+}

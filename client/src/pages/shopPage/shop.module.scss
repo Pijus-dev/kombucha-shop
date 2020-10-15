@@ -1,0 +1,27 @@
+.container {
+  width: 90%;
+  margin: 20px auto 0 auto;
+
+  .icon {
+    float: right;
+    font-size: 1.75rem;
+    cursor: pointer;
+  }
+}
+
+.bigGrid {
+  width: 65%;
+  margin: 60px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  padding-bottom: 25px;
+}
+.smallGrid {
+  width: 90%;
+  margin: 60px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+  padding-bottom: 25px;
+}

@@ -1,0 +1,54 @@
+$shadow-color: #eee;
+$shadow-hover: darken($shadow-color, 4%);
+
+.product {
+  border-radius: 10px;
+  box-shadow: 0px 2px 3px 4px $shadow-color;
+  transition: transform 0.25s ease-out;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 4px 6px $shadow-hover;
+  }
+
+  .productImage {
+    border-radius: 10px 10px 0px 0px;
+    height: 350px;
+    background-size: cover;
+    background-position: 50% 60%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    button {
+      display: none;
+      background-color: black;
+      border-color: black;
+      font-weight: lighter;
+      font-size: 1rem;
+      padding: 8px;
+      min-width: 200px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .productInfo {
+    padding-top: 10px;
+    text-align: center;
+
+    h3 {
+      margin-bottom: 0;
+      font-size: 1.123rem;
+      font-family: "Poppins", sans-serif;
+      font-weight: 400;
+    }
+  }
+  &:hover {
+    .productImage {
+      opacity: 0.85;
+    }
+    button {
+      display: block;
+    }
+  }
+}
