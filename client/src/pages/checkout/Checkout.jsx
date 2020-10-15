@@ -47,6 +47,11 @@ const Checkout = ({ cartItems, totalPrice }) => {
           </div>
         </div>
       </div>
+      <div className={styles.creditCard}>
+        <p>For the test case use these credit card numbers:</p>
+        <p>4242 4242 4242 4242</p>
+        <p>02/23 123</p>
+      </div>
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 .checkout {
   width: 100%;
   padding-top: 80px;
@@ -41,6 +40,16 @@
       button {
         margin-top: 18px;
       }
+    }
+  }
+  .creditCard {
+    text-align: center;
+    margin-top: 20px;
+
+    p {
+      color: red;
+      font-size: 1.123rem;
+      letter-spacing: 1.4px;
     }
   }
 }
