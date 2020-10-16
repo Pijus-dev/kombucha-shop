@@ -11,7 +11,7 @@ import styles from "./stripe-button.module.scss";
 import { clearAllItems } from "../../redux/cart/cartActions";
 import { connect } from "react-redux";
 
-const img = require("../../img/logo.jpg");
+const img = require("../../img/stripe.png");
 
 const StripeButton = ({ price, history }) => {
   const priceForStripe = price * 100;

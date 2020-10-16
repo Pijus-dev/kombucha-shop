@@ -6,6 +6,10 @@
     float: right;
     font-size: 1.75rem;
     cursor: pointer;
+
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
   }
 }
 
@@ -16,6 +20,14 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
   padding-bottom: 25px;
+
+  @media screen and (max-width: 500px) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: 414px) {
+    grid-template-columns: 1fr;
+  }
 }
 .smallGrid {
   width: 90%;

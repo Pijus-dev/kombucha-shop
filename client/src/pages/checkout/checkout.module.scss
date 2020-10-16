@@ -11,6 +11,11 @@
     padding: 5px 20px;
     box-shadow: 0px 2px 2px 3px rgb(231, 214, 214);
 
+    @media screen and (max-width: 500px) {
+      width: 90%;
+      box-shadow: 0px 1px 1px 2px rgb(231, 214, 214);
+    }
+
     h3 {
       font-size: 1.25rem;
       letter-spacing: 1.4px;

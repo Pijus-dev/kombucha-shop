@@ -2,8 +2,14 @@ import React from "react";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-router-dom";
-import { AiOutlineHome, AiOutlineShopping } from "react-icons/ai";
-import { RiInformationLine } from "react-icons/ri";
+import {
+  AiOutlineHome,
+  AiOutlineShopping,
+  RiInformationLine,
+  RiContactsFill,
+  FaHandshake,
+  FiMapPin,
+} from "react-icons/all";
 import styles from "./mobile-navigation.module.scss";
 
 const containerVariants = {
@@ -55,15 +61,27 @@ const MobileNavigation = ({ open }) => (
         <motion.div variants={itemVariants} className={styles.links}>
           <div className={styles.link}>
             <AiOutlineHome className={styles.icon} />
-            <Link>Home</Link>
+            <Link to="/">Home</Link>
           </div>
           <div className={styles.link}>
             <AiOutlineShopping className={styles.icon} />
-            <Link>Shop</Link>
+            <Link to="/shop">Shop</Link>
           </div>
           <div className={styles.link}>
             <RiInformationLine className={styles.icon} />
-            <Link>About</Link>
+            <Link to="/about">About</Link>
+          </div>
+          <div className={styles.link}>
+            <RiContactsFill className={styles.icon} />
+            <Link to="/contacts">Contacts</Link>
+          </div>
+          <div className={styles.link}>
+            <FaHandshake className={styles.icon} />
+            <Link to="/become-reseller">Become reseller</Link>
+          </div>
+          <div className={styles.link}>
+            <FiMapPin className={styles.icon} />
+            <Link to="/locations">Where to buy?</Link>
           </div>
         </motion.div>
       </motion.div>

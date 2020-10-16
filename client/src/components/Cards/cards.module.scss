@@ -2,6 +2,10 @@
   width: 95%;
   margin: 80px auto 0;
 
+  @media screen and (max-width: 500px) {
+    margin: -50px auto 0 auto;
+  }
+
   h2 {
     text-align: center;
     font-size: 1.6rem;
@@ -12,7 +16,7 @@
     grid-auto-rows: 450px;
 
     @media screen and (max-width: 500px) {
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr;
     }
   }
 }

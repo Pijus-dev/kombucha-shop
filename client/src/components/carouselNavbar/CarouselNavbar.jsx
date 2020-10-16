@@ -37,7 +37,7 @@ const CarouselNavbar = ({ hidden }) => {
         <div className={`${showMenu && styles.navbarExpand}`}>
           <nav className={styles.navbar}>
             <div className={styles.logo}>
-              <img src={require("../../img/logo.jpg")} alt="" />
+              <img src={require("../../img/logo.png")} alt="" />
             </div>
             <NavLinks setShowMenu={setShowMenu} showMenu={showMenu} />
           </nav>

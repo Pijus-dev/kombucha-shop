@@ -11,7 +11,11 @@
     padding: 0 20px 20px 20px;
     border-radius: 8px;
     background-color: rgba(0, 0, 0, 0.75);
-    
+
+    @media screen and (max-width: 500px) {
+      width: 50%;
+    }
+
     h1 {
       font-size: 1.75rem;
       letter-spacing: 1.7px;
@@ -46,6 +50,10 @@
   position: absolute !important;
   right: 2.5%;
   top: 94%;
+
+  @media screen and (max-width: 500px) {
+    display: none !important;
+  }
 
   li {
     margin-right: 10px !important;

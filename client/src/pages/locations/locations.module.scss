@@ -11,6 +11,11 @@
     grid-auto-rows: 300px;
     grid-gap: 1rem;
 
+    @media screen and (max-width: 500px) {
+      width: 90%;
+      grid-template-columns: 1fr 1fr;
+    }
+
     .locationImage {
       background-size: cover;
       background-position: center;

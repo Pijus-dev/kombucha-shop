@@ -4,9 +4,17 @@
   margin: 30px auto 0 auto;
   display: flex;
   padding-bottom: 25px;
+  @media screen and (max-width: 500px) {
+    display: block;
+  }
 
   .photos {
     width: 50%;
+
+    @media screen and (max-width: 500px) {
+      width: 80%;
+      margin: 0 auto;
+    }
 
     .image {
       height: 600px;
@@ -19,6 +27,11 @@
     width: 40%;
     padding: 50px 0 0 40px;
 
+    @media screen and (max-width: 500px) {
+      width: 80%;
+      margin-top: -40px;
+    }
+
     .info {
       width: 75%;
       margin: 15px auto 0 auto;
@@ -29,6 +42,10 @@
         font-weight: bold;
         letter-spacing: 1.5px;
         font-family: "Poppins", sans-serif;
+
+        @media screen and (max-width: 500px) {
+          font-size: 1.75rem;
+        }
       }
       h3 {
         font-size: 1.7rem;
