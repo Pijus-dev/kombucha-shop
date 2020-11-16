@@ -3,6 +3,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./about-section.module.scss";
 
+
+// about page
 const AboutSection = () => (
   <div className={styles.aboutSection}>
     <div className={styles.titleSection}>
