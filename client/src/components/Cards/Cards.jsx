@@ -7,6 +7,7 @@ import { DRINKS } from "../../mockData";
 
 import styles from "./cards.module.scss";
 
+// card page
 const Cards = () => {
   const [product, setProducts] = useState([]);
 
