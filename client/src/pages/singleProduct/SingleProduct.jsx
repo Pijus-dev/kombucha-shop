@@ -4,34 +4,31 @@ import { Fade } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import { connect } from "react-redux";
 import { addItem } from "../../redux/cart/cartActions";
+import { withRouter } from "react-router-dom";
 
 import CustomButton from "../../components/customButton/CustomButton";
 
 import { useParams } from "react-router-dom";
 import { firestore } from "../../firebase/firebase";
 
+import { DRINKS } from "../../mockData";
+
 import styles from "./single-product.module.scss";
-
-const SingleProduct = ({ addItem }) => {
-  const urlParams = useParams();
-  const { id } = urlParams;
-
+const SingleProduct = ({ match, addItem }) => {
   const [photos, setPhotos] = useState([]);
   const [data, setData] = useState({});
 
-  const getData = async () => {
-    const ref = await firestore.collection("drinks").doc(id).get();
-    setPhotos(ref.data().imgUrl);
-    setData({
-      id: ref.id,
-      name: ref.data().name,
-      price: ref.data().price,
-      imgUrl: ref.data().imgUrl[0],
-    });
-  };
-
   useEffect(() => {
-    getData();
+    const drink = DRINKS.find(({ id }) => id === match.params.id);
+    const { imgUrl } = drink;
+    setPhotos(imgUrl);
+    setData({
+      id: drink.id,
+      name: drink.name,
+      price: drink.price,
+      imgUrl: imgUrl[0],
+      description: drink.description,
+    });
   }, []);
 
   return (
@@ -70,4 +67,4 @@ const mapDispatchToProps = (dispatch) => ({
   addItem: (item) => dispatch(addItem(item)),
 });
 
-export default connect(null, mapDispatchToProps)(SingleProduct);
+export default connect(null, mapDispatchToProps)(withRouter(SingleProduct));
