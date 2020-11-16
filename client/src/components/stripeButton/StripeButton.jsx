@@ -18,6 +18,7 @@ const StripeButton = ({ price, history }) => {
   const PUBLISHABLE_KEY = "pk_test_i28ouERO9Dli1OlxDdGM7HFA00hCEjnkrw";
 
   const onToken = async (token) => {
+    console.log(token);
     try {
       await axios({
         url: "/payment",
